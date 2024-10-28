@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 1</title>
+</head>
+<body>
+    <script>
+        let input = prompt("Введіть рядок не більше 7 символів");
+        let letters = input.split('');
+
+        while (letters.length > 7) {
+            alert("Помилка... Перевищено допустиму кількість символів");
+            input = prompt("Введіть рядок не більше 7 символів");
+            letters = input.split('');
+        }
+
+        letters[0] = letters[0].toLowerCase();
+
+        function checkWord() {
+            for (let letter of letters) {
+                if (letters.length === 3 && (letters[0] === letters[2])) {
+                    alert("Введений рядок є паліндромом");
+                    break;
+                } else if (letters.length === 4 && ((letters[0] === letters[3]) && (letters[1] === letters[2]))) {
+                    alert("Введений рядок є паліндромом");
+                    break;
+                } else if ((letters.length === 5 && ((letters[0] === letters[4]) && (letters[1] === letters[3]))) || (letters.length === 5 && ((letters[0] === letters[4]) && (letters[1] === letters[3]) && (letters[1] === letters[2]) && letters[2] === letters[3]))) {
+                    alert("Введений рядок є паліндромом");
+                    break;
+                } else if (letters.length === 6 && ((letters[0] === letters[5]) && (letters[1] === letters[4]) && (letters[2] === letters[3]))) {
+                    alert("Введений рядок є паліндромом");
+                    break;
+                } else if (letters.length === 6 && ((letters[0] === letters[5]) && (letters[1] === letters[2]) && (letters[3] === letters[4]))) {
+                    alert("Введений рядок є паліндромом");
+                    break;
+                } else if (letters.length === 7 && ((letters[0] === letters[6]) && (letters[1] === letters[5]) && (letters[2] === letters[4]))) {
+                    alert("Введений рядок є паліндромом");
+                    break;
+                } else {
+                    alert("Введений рядок не є паліндромом");
+                    break;
+                }
+            }
+        }
+        checkWord();
+    </script>
+</body>
+</html>
