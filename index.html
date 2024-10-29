@@ -9,6 +9,25 @@
 </head>
 <body>
     <script>
+        let input = prompt("Введіть значення");
+
+        let i = 0;
+        while (input === "") {
+            i++;
+            input = prompt("Ви ввели порожній рядок. Спробуйте ще раз.");
+        }
+        input = input.toLowerCase();
+
+        isPalindrome(input)
+        function isPalindrome(value) {
+            let sec = value.split("").reverse().join("");
+            if (value === sec) {
+                alert(`Значення ${input} є паліндромом`);
+            } else {
+                alert(`Значення ${input} не є паліндромом`);
+            }
+        }
+        /*
         let input = prompt("Введіть рядок не більше 7 символів");
         let letters = input.split('');
 
@@ -47,6 +66,7 @@
             }
         }
         checkWord();
+         */
     </script>
 </body>
 </html>
